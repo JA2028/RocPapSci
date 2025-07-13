@@ -16,6 +16,11 @@
   <div class="bet-section">
     <label for="bet">Enter Bet: $</label>
     <input type="number" id="bet" value="100" min="1" step="10">
+    <button onclick="allIn()" class="all-in-button">All In</button>
+  </div>
+
+  <div class="emoji-toggle-container">
+    <button id="emoji-toggle-btn" onclick="toggleEmojiSet()">Switch Emoji Set</button>
   </div>
 
   <div class="choice-buttons">
@@ -36,6 +41,15 @@
       </div>
     </div>
     <h2 id="result">Make your move!</h2>
+  </div>
+
+  <div class="streak-info">
+    🔥 Win Streak: <span id="streak">0</span>
+  </div>
+
+  <div id="game-log-container">
+    <h3>Game Log</h3>
+    <div id="game-log" class="game-log"></div>
   </div>
 
   <!-- GAME OVER SCREEN -->
