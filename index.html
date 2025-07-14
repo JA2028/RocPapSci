@@ -2,62 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Rock Paper Scissors</title>
+  <title>Rock Paper Scissors - Casino Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Rock Paper Scissors</h1>
+  <div class="game-container">
+    <header>
+      <h1>Rock Paper Scissors 🎲</h1>
+    </header>
 
-  <div class="balance-info">
-    💰 Balance: $<span id="balance">1000</span>
-  </div>
-
-  <div class="bet-section">
-    <label for="bet">Enter Bet: $</label>
-    <input type="number" id="bet" value="100" min="1" step="10">
-    <button onclick="allIn()" class="all-in-button">All In</button>
-  </div>
-
-  <div class="emoji-toggle-container">
-    <button id="emoji-toggle-btn" onclick="toggleEmojiSet()">Switch Emoji Set</button>
-  </div>
-
-  <div class="choice-buttons">
-    <button onclick="play('rock')" class="icon-button">🪨</button>
-    <button onclick="play('paper')" class="icon-button">📄</button>
-    <button onclick="play('scissors')" class="icon-button">✂️</button>
-  </div>
-
-  <div class="results">
-    <div class="choices">
-      <div>
-        <h3>You Chose:</h3>
-        <div id="player-icon" class="icon-display">❔</div>
+    <section class="balance-section">
+      <div class="balance-info">
+        💰 Balance: <span id="balance">1000</span> $
       </div>
-      <div>
-        <h3>Computer Chose:</h3>
-        <div id="computer-icon" class="icon-display">❔</div>
+      <div class="streak-info">
+        🔥 Streak: <span id="streak">0</span>
       </div>
-    </div>
-    <h2 id="result">Make your move!</h2>
-  </div>
+    </section>
 
-  <div class="streak-info">
-    🔥 Win Streak: <span id="streak">0</span>
-  </div>
+    <section class="bet-section">
+      <label for="bet">Place your bet:</label>
+      <input type="number" id="bet" value="100" min="1" step="10" />
+      <button id="all-in-btn" onclick="allIn()">ALL IN</button>
+    </section>
 
-  <div id="game-log-container">
-    <h3>Game Log</h3>
-    <div id="game-log" class="game-log"></div>
-  </div>
+    <section class="choice-section">
+      <h2>Make your choice</h2>
+      <div class="choice-buttons">
+        <button onclick="play('rock')" class="icon-button">🪨</button>
+        <button onclick="play('paper')" class="icon-button">📄</button>
+        <button onclick="play('scissors')" class="icon-button">✂️</button>
+      </div>
+    </section>
 
-  <!-- GAME OVER SCREEN -->
-  <div id="game-over-screen" class="hidden">
-    <div class="game-over-content">
-      <h2>💸 You're Broke!</h2>
-      <p>Your balance hit $0. Game Over.</p>
-      <button onclick="restartGame()" class="restart-button">Restart Game</button>
+    <section class="result-section">
+      <div class="choices-display">
+        <div>
+          <h3>You Chose:</h3>
+          <div id="player-icon" class="icon-display">❔</div>
+        </div>
+        <div>
+          <h3>Computer Chose:</h3>
+          <div id="computer-icon" class="icon-display">❔</div>
+        </div>
+      </div>
+      <h2 id="result">Make your move!</h2>
+    </section>
+
+    <section class="emoji-toggle-section">
+      <button id="emoji-toggle-btn" onclick="toggleEmojiSet()">
+        Emoji Set: 1 / 4 (Switch)
+      </button>
+    </section>
+
+    <section class="log-section">
+      <h3>Game Log</h3>
+      <div id="game-log"></div>
+    </section>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="hidden">
+      <div class="game-over-content">
+        <h2>💸 You're Broke!</h2>
+        <p>Your balance hit $0. Game Over.</p>
+        <button onclick="restartGame()" class="restart-button">Restart Game</button>
+      </div>
     </div>
   </div>
 
